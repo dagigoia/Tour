@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DaGigóia</title>
+
+
+  <link rel="stylesheet" href="/Tour/CSS/style.css">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+</head>
+
+<body>
+  
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#roteiros">Roteiros</a></li>
+        <li><a href="#perguntas">Perguntas</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <div class="language-links">
+        <a href="/Tour/Paginas-html/espanhol.html" title="Español">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Espanha" class="flag-icon">
+        </a>
+        <a href="/Tour/Paginas-html/frances.html" title="Français">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="França" class="flag-icon">
+        </a>
+        <a href="/Tour/Paginas-html/ingles.html" title="English">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="Inglês" class="flag-icon">
+        </a>
+        <a href="/Tour/" title="Português">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="Brasil" class="flag-icon">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+  <br><br>
+  <audio id="musica" loop hidden>
+    <source src="MusicaPagina.mp3" type="audio/mp3">
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+
+
+
+  <div class="fotolugar">
+  <img class="imagem-principal" src="Imagens/Fundologo.png" alt="">
+  </div>
+  
+  <div class="whatsapp-button">
+    <a href="https://wa.me/5521983711912" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+  </div>
+
+  <div class="container caixa-formatada">
+    <div class="texto">
+      <p class="descricao">O nosso passeio é diferente! Nada de pressa, nada de estresse. Aqui, você embarca numa viagem
+        pelas águas tranquilas do arquipélago, cercado pela natureza exuberante do nosso Pantanal Carioca.</p>
+    </div>
+  </div>
+
+
+
+
+  <div class="roteiros" id="roteiros">
+    <h2>Roteiros</h2>
+    <div class="roteiros-container">
+
+      <div class="roteiro-item"
+        onclick="abrirModal('Imagens/Pantanal carioca.jpg', 'Pantanal Carioca', 'Duração: 25 a 35 minutos de pura emoção!<br>Descrição: Prepare-se para ser encantado enquanto navega pelo fascinante canal Marapendi! Conheça o berçário dos jacarés do papo amarelo e se delicie com a vista dos diversos restaurantes que adornam as ilhas. É uma verdadeira imersão na natureza!<br>Incluso: Seu passeio já inclui a volta ao ponto de partida, garantindo uma experiência completa.')">
+        <img class="miniatura" src="Imagens/Pantanal carioca.jpg" alt="Roteiro 1" width="300">
+        <p class="titulo-passeio">Pantanal Carioca</p>
+      </div>
+      <div class="roteiro-item"
+        onclick="abrirModal('Imagens/Passeio prime.png', 'Passeio Prime', 'Duração: 45 a 50 minutos de pura emoção!<br> Eleve sua experiência com o Passeio Prime! Navegue pelo Pantanal Carioca e, em seguida, descubra a deslumbrante Praia dos Amores, um verdadeiro paraíso ao lado do pier da Barra.<br>Incluso: Todo o conforto e qualidade do passeio Pantanal, com um toque especial!')">
+        <img class="miniatura" src="Imagens/Passeio prime.png" alt="Roteiro 2" width="300">
+        <p class="titulo-passeio">Passeio Prime</p>
+      </div>
+      <div class="roteiro-item"
+        onclick="abrirModal('Imagens/tijucas3.png', 'Passeio às Ilhas Tijucas', 'Duração: 4 horas de pura alegria!<br>Descrição: Mergulhe em um dia de aventuras nas Ilhas Tijucas, em frente à Praia da Barra! Aproveite atividades como stand-ups, mergulho com máscara e macarrões flutuantes para se divertir na água. É diversão garantida para todos!<br>Incluso: Água e mate para você se manter hidratado enquanto desfruta dessa experiência incrível.')">
+        <img class="miniatura" src="Imagens/tijucas3.png" alt="Roteiro 3" width="300">
+        <p class="titulo-passeio">Ilhas Tijucas</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="modal" class="modal">
+    <div class="modal-conteudo">
+      <span class="fechar" onclick="fecharModal()">&times;</span>
+      <img id="modal-imagem" src="" alt="Imagem Ampliada">
+      <h2 id="modal-titulo"></h2>
+      <p id="modal-desc"></p>
+    </div>
+  </div>
+  <br>
+
+
+  <div class=" caixa-formatada">
+    <div class="texto">
+      <p>Quer ver jacaré do papo amarelo de pertinho? Curtir uma prainha escondida? Ou cair na água com stand-up e
+        mergulho? Então cola com a gente. Nossos passeios são pra quem quer se conectar com a natureza, explorar
+        cantinhos paradisíacos e, claro, aproveitar aquele clima maneiro que só o Rio tem.</p>
+    </div>
+    <br><br><br>
+    <section class="sobre-nos" id="sobre-nos">
+      <div class="imagens">
+        <img src="Imagens/Cliente1.png" alt="Imagem 1">
+        <img src="Imagens/Cliente2.png" alt="Imagem 2">
+        <img src="Imagens/Cliente3.png" alt="Imagem 3">
+      </div>
+  </div>
+  </section>
+
+  <div class="container caixa-formatada">
+    <div class="texto">
+      <p>Agora é só escolher o passeio que mais combina contigo e
+        partir pro mar!</p>
+    </div>
+  </div>
+
+
+  <br><br><br><br><br>
+
+  <div class="organizacao-feedback">
+  <div class="testimonials">
+    <div class="depoimentos" id="depoimentos">
+      <h2>Feedback</h2>
+    </div>
+  </div>
+
+  <div class="testimonials">
+    <div class="testimonial-wrapper">
+      <button class="prev">❮</button>
+      <div class="testimonial-container">
+        <div class="testimonial"><img src="Imagens/depoimento0.png" alt="Depoimento 1"></div>
+        <div class="testimonial"><img src="Imagens/depoimento1.png" alt="Depoimento 3"></div>
+        <div class="testimonial"><img src="Imagens/depoimento2.png" alt="Depoimento 4"></div>
+        <div class="testimonial"><img src="Imagens/depoimento3.png" alt="Depoimento 4"></div>
+      </div>
+      <button class="next">❯</button>
+    </div>
+  </div>
+</div>
+
+
+  <br><br>
+
+  <div class="perguntas" id="perguntas">
+    <h2 class="tituloperguntas">Perguntas Frequentes</h2>
+    <p>Tire suas dúvidas de forma rápida e fácil</p>
+
+    <div class="duvida">
+      <details open>
+        <summary>Como é o passeio?</summary>
+        <p>Cada passeio tem um roteiro diferente. Embarque nessas divertidas atrações!</p>
+      </details>
+    </div>
+
+    <div class="duvida">
+      <details>
+        <summary>Criança paga?</summary>
+        <p>Crianças de até cinco anos não pagam, limitado a três por grupo, desde que estejam acompanhadas por pelo
+          menos dois adultos.</p>
+      </details>
+    </div>
+
+    <div class="duvida">
+      <details>
+        <summary>É seguro?</summary>
+        <p>Sim! Todas as medidas de segurança marítima são adotadas para garantir uma experiência tranquila e
+          protegida</p>
+      </details>
+    </div>
+    <div class="duvida">
+      <details>
+        <summary>Há a possibilidade de um passeio bilíngue?</summary>
+        <p>Sim, há a opção de passeio bilíngue, mas é necessário avisar com antecedência, e o valor pode sofrer
+          alterações.</p>
+      </details>
+    </div>
+
+
+    <div class="duvida">
+      <details>
+        <summary>Somos guias turísticos, temos algum benefício?</summary>
+        <p>Sim, se o guia estiver acompanhado de pelo menos duas pessoas, não há cobrança pelo passeio.</p>
+      </details>
+    </div>
+
+    <div class="duvida">
+      <details>
+        <summary>Aniversariante tem desconto?</summary>
+        <p>Claro, dá pra gente fechar vários tipos de colaboração.</p>
+      </details>
+    </div>
+
+    <div class="duvida">
+      <details>
+        <summary>Quais as formas de pagamento?</summary>
+        <p>Pix / Dinheiro / Crédito / Débito</p>
+      </details>
+    </div>
+  </div>
+  
+  <footer class="footer" id="contato">
+    <div class="footer-content">
+      <div class="footer-section contato">
+        <h3>Contato</h3>
+        <p>
+          <a href="tel:+5521983711912">
+            <i class="fas fa-phone"></i> +55 (21) 98371-1912
+          </a>
+        </p>
+      </div>
+      <div class="footer-section-logo">
+        <img src="Imagens/logo_transparente.png" alt="Logo">
+      </div>
+
+      <div class="footer-section redes-sociais">
+        <h3>Siga-nos</h3>
+        <p>
+          <a href="https://www.instagram.com/dagigoiarj?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='"
+            target="_blank">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+        </p>
+        <p>
+          <a href="https://wa.me/5521983711912" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; Da Gigoia RJ| Todos os direitos reservados</p>
+    </div>
+  </footer>
+</div>
+
+  
+
+
+  <script src="/Tour/JS/script.js"></script>
+</body>
+
+</html>

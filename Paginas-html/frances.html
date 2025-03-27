@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaGigóia</title>
+
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#depoimentos">Témoignages</a></li>
+                <li><a href="#roteiros">Itinéraires</a></li>
+                <li><a href="#perguntas">Questions</a></li>
+                <li><a href="#contato">Contact</a></li>
+              </ul>
+              
+          <div class="language-links">
+            <a href="/Tour/Paginas-html/espanhol.html" title="Español">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Espanha" class="flag-icon">
+              </a>
+              <a href="/Tour/Paginas-html/frances.html" title="Français">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="França" class="flag-icon">
+              </a>
+              <a href="/Tour/Paginas-html/ingles.html" title="English">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="Inglês" class="flag-icon">
+              </a>
+              <a href="/Tour/index.html" title="Português">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="Brasil" class="flag-icon">
+              </a>
+          </div>
+        </nav>
+      </header>
+    <br><br>
+    <audio id="musica" loop hidden>
+        <source src="../MusicaPagina.mp3" type="audio/mp3">
+        Votre navigateur ne prend pas en charge l'élément audio.
+    </audio>
+
+    <div class="fotolugar">
+        <img class="imagem-principal" src="../Imagens/Fundologo.png" alt="">
+    </div>
+
+    <div class="whatsapp-button">
+        <a href="https://wa.me/5521983711912" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+    </div>
+
+    <div class="container caixa-formatada">
+        <div class="texto">
+            <p class="descricao">Notre excursion est unique ! Pas de précipitation, pas de stress. Ici, vous embarquez pour un voyage à travers les eaux tranquilles de l'archipel, entouré par la nature luxuriante de notre Pantanal Carioca.</p>
+        </div>
+    </div>
+
+    <div class="roteiros" id="roteiros">
+        <h2>Itinéraires</h2>
+        <div class="roteiros-container">
+            <div class="roteiro-item" onclick="abrirModal('../Imagens/Pantanal carioca.jpg', 'Pantanal Carioca', 'Durée : 25 à 35 minutes d\'émotion pure !<br>Description : Préparez-vous à être enchanté en naviguant sur le fascinant canal Marapendi ! Découvrez la nurserie des caïmans à museau jaune et profitez de la vue des nombreux restaurants qui ornent les îles. Une véritable immersion dans la nature !<br>Inclus : Votre excursion comprend déjà le retour au point de départ, garantissant une expérience complète.')">
+                <img class="miniatura" src="../Imagens/Pantanal carioca.jpg" alt="Itinéraire 1" width="300">
+                <p class="titulo-passeio">Pantanal Carioca</p>
+            </div>
+            <div class="roteiro-item" onclick="abrirModal('../Imagens/Passeio prime.png', 'Excursion Prime', 'Durée : 45 à 50 minutes d\'émotion pure !<br>Élevez votre expérience avec l\'Excursion Prime ! Naviguez à travers le Pantanal Carioca et découvrez ensuite la magnifique Praia dos Amores, un véritable paradis à côté du quai de la Barra.<br>Inclus : Tout le confort et la qualité de l\'excursion Pantanal, avec une touche spéciale !')">
+                <img class="miniatura" src="../Imagens/Passeio prime.png" alt="Itinéraire 2" width="300">
+                <p class="titulo-passeio">Excursion Prime</p>
+            </div>
+            <div class="roteiro-item" onclick="abrirModal('../Imagens/tijucas3.png', 'Excursion aux Îles Tijucas', 'Durée : 4 heures de pur plaisir !<br>Description : Plongez dans une journée d\'aventures aux Îles Tijucas, en face de la plage de la Barra ! Profitez d\'activités comme le stand-up paddle, la plongée avec masque et des nouilles flottantes pour vous amuser dans l\'eau. Plaisir garanti pour tous !<br>Inclus : Eau et maté pour vous hydrater tout en profitant de cette expérience incroyable.')">
+                <img class="miniatura" src="../Imagens/tijucas3.png" alt="Itinéraire 3" width="300">
+                <p class="titulo-passeio">Îles Tijucas</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar" onclick="fecharModal()">&times;</span>
+            <img id="modal-imagem" src="" alt="Image Agrandie">
+            <h2 id="modal-titulo"></h2>
+            <p id="modal-desc"></p>
+        </div>
+    </div>
+    <br>
+
+    <div class="caixa-formatada">
+        <div class="texto">
+            <p class="descricao">Vous voulez voir un caïman à museau jaune de près ? Profiter d'une plage cachée ? Ou faire du stand-up paddle et du snorkeling ? Alors, venez avec nous ! Nos excursions sont faites pour ceux qui souhaitent se connecter à la nature, explorer des lieux paradisiaques et, bien sûr, profiter de l'ambiance unique que seul Rio peut offrir.</p>
+        </div>
+        <br><br><br>
+        <section class="sobre-nos" id="sobre-nos">
+            <div class="imagens">
+                <img src="../Imagens/Cliente1.png" alt="Image 1">
+                <img src="../Imagens/Cliente2.png" alt="Image 2">
+                <img src="../Imagens/Cliente3.png" alt="Image 3">
+            </div>
+    </div>
+    </section>
+
+    <div class="container caixa-formatada">
+        <div class="texto">
+            <p>Il ne vous reste plus qu'à choisir l'excursion qui vous convient le mieux et à partir en mer !</p>
+        </div>
+    </div>
+    <br><br><br><br><br>
+
+    <div class="organizacao-feedback">
+        <div class="testimonials">
+            <div class="depoimentos" id="depoimentos">
+                <h2>Avis</h2>
+            </div>
+        </div>
+
+        <div class="testimonials">
+            <div class="testimonial-wrapper">
+                <button class="prev">❮</button>
+                <div class="testimonial-container">
+                    <div class="testimonial"><img src="../Imagens/depoimento0.png" alt="Avis 1"></div>
+                    <div class="testimonial"><img src="../Imagens/depoimento1.png" alt="Avis 2"></div>
+                    <div class="testimonial"><img src="../Imagens/depoimento2.png" alt="Avis 3"></div>
+                    <div class="testimonial"><img src="../Imagens/depoimento3.png" alt="Avis 4"></div>
+                </div>
+                <button class="next">❯</button>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="perguntas" id="perguntas">
+        <h2 class="tituloperguntas">Questions Fréquentes</h2>
+        <p>Obtenez vos réponses rapidement et facilement</p>
+
+        <div class="duvida">
+            <details open>
+                <summary>Comment se passe l'excursion ?</summary>
+                <p>Chaque excursion a un itinéraire différent. Embarquez pour ces attractions amusantes !</p>
+            </details>
+        </div>
+
+        <div class="duvida">
+            <details>
+                <summary>Les enfants doivent-ils payer ?</summary>
+                <p>Les enfants jusqu'à cinq ans ne paient pas, limité à trois par groupe, à condition qu'ils soient
+                    accompagnés d'au moins deux adultes.</p>
+            </details>
+        </div>
+
+        <div class="duvida">
+            <details>
+                <summary>Est-ce sûr ?</summary>
+                <p>Oui ! Toutes les mesures de sécurité maritime sont adoptées pour garantir une expérience tranquille
+                    et sécurisée.</p>
+            </details>
+        </div>
+
+        <div class="duvida">
+            <details>
+                <summary>Y a-t-il une possibilité d'excursion bilingue ?</summary>
+                <p>Oui, il est possible d'avoir une excursion bilingue, mais il faut prévenir à l'avance, et le prix
+                    peut varier.</p>
+            </details>
+        </div>
+
+        <div class="duvida">
+            <details>
+                <summary>Nous sommes des guides touristiques, avons-nous un avantage ?</summary>
+                <p>Oui, si le guide est accompagné d'au moins deux personnes, l'excursion est gratuite.</p>
+            </details>
+        </div>
+
+        <div class="duvida">
+            <details>
+                <summary>Les personnes célébrant leur anniversaire ont-elles une réduction ?</summary>
+                <p>Bien sûr, nous pouvons organiser différentes collaborations.</p>
+            </details>
+        </div>
+        
+
+        <div class="duvida">
+            <details>
+                <summary>Quels sont les modes de paiement acceptés ?</summary>
+                <p>Pix / Espèces / Carte de crédit / Carte de débit</p>
+            </details>
+        </div>
+    </div>
+
+    <footer class="footer" id="contato">
+        <div class="footer-content">
+            <div class="footer-section contato">
+                <h3>Contact</h3>
+                <p>
+                    <a href="tel:+5521983711912">
+                        <i class="fas fa-phone"></i> +55 (21) 98371-1912
+                    </a>
+                </p>
+            </div>
+            <div class="footer-section-logo">
+                <img src="../Imagens/logo_transparente.png" alt="Logo">
+            </div>
+
+            <div class="footer-section redes-sociais">
+                <h3>Suivez-nous</h3>
+                <p>
+                    <a href="https://www.instagram.com/dagigoiarj?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='"
+                        target="_blank">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                </p>
+                <p>
+                    <a href="https://wa.me/5521983711912" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; Da Gigoia RJ | Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script src="../JS/script.js"></script>
+</body>
+
+</html>

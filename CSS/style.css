@@ -1,0 +1,826 @@
+/* Reset básico para remover margens e paddings padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Piedra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Oswald:wght@200..700&display=swap');
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000;
+    background-image: url(Fundo.png);
+    margin: 0;
+    height: 100vh;
+    overflow-x: hidden;
+    width: 100%;
+    padding: 0%;
+    
+}
+
+
+
+
+header {
+    background-color: #1c581f;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 10px 5%;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 321px) {
+    header {
+        padding-bottom: 30px;
+        padding-top: 30px;
+        height: 80px; /* Aumenta a altura do cabeçalho para telas pequenas */
+    }
+}
+
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+header.show {
+    top: 0;
+}
+
+/* Estilos para as bandeirinhas no canto direito e centralizadas horizontalmente */
+.language-links {
+    position: absolute;
+    right: 5%;  /* Ajusta a distância da borda direita */
+    top: 50%;
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    display: flex;
+    gap: 10px;
+}
+
+.language-links a {
+    display: inline-block;
+}
+
+.flag-icon {
+    width: 25px;  /* Tamanho das bandeiras */
+    height: 15px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.flag-icon:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    .language-links {
+        right: 10px;  /* Ajuste a distância da borda direita */
+        top: 50%;
+        transform: translateY(-50%);
+        gap: 8px;
+    }
+}
+
+/* Ajuste para telas muito pequenas, como celulares */
+@media (max-width: 480px) {
+    header {
+        height: 80px;  /* Aumenta a altura do cabeçalho para telas pequenas */
+    }
+    nav{
+        margin-bottom: 15px;
+    }
+    .language-links {
+        position: absolute;
+        top: 50%;  /* Coloca as bandeirinhas no meio do cabeçalho */
+        left: 50%;
+        transform: translateX(-50%);  /* Centraliza horizontalmente */
+        display: flex;
+        gap: 10px;
+        padding: 10px 0;  /* Ajuste para que fiquem mais afastadas */
+        width: 100%;
+        justify-content: center;
+        margin-top: 5px;
+    }
+
+    .flag-icon {
+        width: 30px;  /* Aumenta um pouco o tamanho das bandeiras */
+        height: 20px;
+    }
+}
+
+
+.roteiros {
+    text-align: center;
+    margin: 60px auto;
+    color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    max-width: 1500px;
+    width: 100%;  /* Ajustado para garantir que não ultrapasse a largura */
+    
+    
+}
+
+.roteiros h2 {
+    margin-bottom: 20px;
+    font-size: 3.0rem;
+    
+}
+
+.roteiros-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1500px;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+
+.roteiros .miniatura {
+    width: 500px;
+    height: 400px;
+    transition: transform 0.3s;
+    cursor: pointer;
+    object-fit: cover;
+
+}
+
+.roteiros .miniatura:hover {
+    transform: scale(1.1);
+}
+
+
+
+@media (max-width: 1200px) {
+    .roteiros-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.titulo-passeio{
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+
+
+.modal {
+
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap');
+
+.modal-conteudo {
+    background: rgb(0, 0, 0);
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.7px;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.1);
+}
+
+
+
+.modal img {
+    width: 100%;
+    max-height: 500px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.fechar {
+    position: absolute;
+    top: -4px;
+    right: 3px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.sobre-nos {
+    text-align: center;
+    margin: 60px auto;
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 100%;  /* Garantir que o conteúdo não ultrapasse */
+}
+
+
+
+
+
+
+.sobre-nos .texto p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.sobre-nos .imagens {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+
+}
+
+
+.sobre-nos .imagens img {
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+
+}
+
+.sobre-nos .imagens img:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 1200px) {
+    .sobre-nos .imagens {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.caixa-formatada {
+    font-size: 2.0rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 60px auto;
+    color: #ffffff;   
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 950px;
+    width: 100%;  /* Para evitar que ultrapasse a largura da tela */
+}
+
+
+
+
+
+@media (max-width: 480px) {
+    .caixa-formatada{
+        max-width: 480px;
+        width: 100vh;
+    }
+    .roteiros{
+        max-width: 480px;
+        width: 100vh;
+        
+    }
+    .sobre-nos{
+        max-width: 480px;
+        width: 100vh;
+    }
+    .perguntas.perguntas{
+        max-width: 480px;
+        width: 100vh;
+    }
+
+    .organizacao-feedback{
+        max-width: 480px;
+        width: 100vh;
+
+    }
+}
+
+.imagens {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    flex: 1;
+}
+
+.imagens img {
+    height: 250px;
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.imagens img:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .imagens {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+.imagem-principal {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, black 100%), url('DaGigoia.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    max-width: 100%; /* Corrigido para 100% */
+    height: 50vh; /* 50% da altura da tela */
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 100%; /* Garantir que a imagem não ultrapasse */
+}
+
+
+
+/* Ajuste para telas menores (smartphones) */
+@media (max-width: 768px) {
+    .imagem-principal {
+        max-width: 768px;
+        width: 100%;
+        height: 25vh; /* Reduz a altura em telas pequenas */
+        margin-top: 30px;
+        margin-bottom: 30px;
+        
+    
+        
+    }
+    
+    
+   
+}
+
+/* Ajuste para telas muito pequenas (até 480px) */
+@media (max-width: 480px) {
+    .imagem-principal {
+        max-width: 480px;
+        width: 100vh;
+        height: 20vh; /* Reduz mais a altura */
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+
+.header-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+
+.logo {
+    font-size: 2em;
+    font-weight: bold;
+    margin-right: auto;
+}
+
+.header-image {
+    margin-left: auto;
+}
+
+
+
+.depoimentos {
+    
+    text-align: center;
+    max-width: 1200px;
+
+}
+
+.depoimentos h2 {
+    font-size: 3.0rem;
+    margin-bottom: 20px;
+    color: white;
+
+}
+
+.testimonials {
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.testimonial-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: max-content;
+    margin-bottom: 50px;
+}
+
+.testimonial {
+    flex: 0 0 400px;
+    margin: 0 10px;
+}
+
+.testimonial img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+button:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.foto-box {
+
+    width: 200px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+
+.tituloperguntas {
+    
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+.perguntas {
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgb(0, 0, 0);
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    margin-top: 40px;
+    margin: 40px auto;
+    max-width: 1200px;
+
+}
+
+.tituloperguntas {
+    font-size: 3.0rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.perguntas p {
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.duvida details {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    background-color: #000000;
+    box-shadow: 0 2px 5px rgb(0, 0, 0);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.duvida summary {
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    list-style: none;
+    font-size: 1.1rem;
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+    border-radius: 4px;
+}
+
+.duvida details p {
+    color: #ffffff;
+
+}
+
+.duvida details[open] summary::before {
+    content: "− ";
+}
+
+.duvida summary::before {
+    content: "+ ";
+    margin-right: 5px;
+}
+
+.duvida p {
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    margin: 0;
+    font-size: 1rem;
+    background-color: #000000;
+}
+
+
+
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-button img {
+    width: 60px;
+    height: auto;
+    cursor: pointer;
+}
+
+
+
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://png.pngtree.com/background/20230425/original/pngtree-waterfall-is-surrounded-by-lush-green-forest-picture-image_2469463.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+
+.background-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+
+}
+
+
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    color: #333;
+    text-align: center;
+}
+.footer {
+    background-color: #1c581f;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+   
+    
+}
+
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Mantém os itens distribuídos */
+    align-items: center;
+    flex-wrap: wrap; /* Impede que os elementos quebrem para outra linha */
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px; /* Evita que os elementos fiquem muito grudados */
+    overflow: hidden;
+}
+
+.footer-section {
+    
+    flex: 1;
+    padding: 10px;
+    min-width: 150px; /* Reduzindo para caber sempre na tela */
+    max-width: 400px; /* Evita que um item fique muito maior que o outro */
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    font-size: 16px;
+}
+
+.footer-section a:hover {
+    color: #000000;
+}
+
+.footer-bottom {
+    border-top: 1px solid #ffffff;
+    padding-top: 10px;
+    margin-top: 20px;
+    
+}
+
+.footer-section-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 10px;
+    
+}
+
+.footer-logo {
+    max-width: 100px;
+    height: auto;
+}
+
+.footer-section-logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+footer {
+    text-align: center;
+    margin-top: auto;
+}
+
+/* Garantindo que mesmo em telas menores os itens fiquem lado a lado */
+
+
+@media (max-width: 501px) {
+    .footer-content {
+        max-width: 501px;
+        width: 100vh;
+        justify-content: space-between;
+        gap: 5px;
+        align-items: center;
+        margin: 0;
+       
+    }
+    .footer{
+        max-width: 501px;
+        width: 100vh;
+    }
+    .imagem-principal{
+        max-width: 501px;
+        width: 100vh;
+        
+
+    }
+    .caixa-formatada{
+        max-width: 501px;
+        width: 100vh;
+    }
+    .roteiros{
+        max-width: 501px;
+        width: 100vh;
+    }
+    .organizacao-feedback{
+        max-width: 501px;
+        width: 100vh;
+
+    }
+    .perguntas.perguntas{
+        max-width: 501px;
+        width: 100vh;
+    }
+
+    header{
+        max-width: 501px;
+        width: 100vh;
+    }
+    .footer-section {
+        min-width: 100px;
+    }
+
+    .footer-section h3 {
+        font-size: 14px;
+    }
+
+    .footer-section a {
+        font-size: 12px;
+    }
+
+    .footer-logo {
+        max-width: 60px;
+    }
+
+
+}
